@@ -18,10 +18,10 @@ class stack:
 
 if __name__ == "__main__":
     stack1 = stack()
-    stack1.addinstack("5")
-    stack1.addinstack("6")
-    stack1.addinstack("7")
-    stack1.addinstack("8")
+    value  = int(input("Enter the number of Values you want to enter"))
+    for i in range(value):
+        stack1.addinstack(input("enter the number \n"))  
+        
     stack1.display()
     stack1.peek()
     stack1.pop()
