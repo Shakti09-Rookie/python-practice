@@ -23,17 +23,14 @@ class queue:
             self.front = (self.front + 1) % (self.capacity)
             self.size -=1
             return self.queue.pop(0)
-
-    # def fo(self):
-    #     self.queue.pop(0)
-
+    #queue front
     def q_front(self):
         if self.isEmpty():
             print("Empty Queue")
 
         # print(self.queue[0])
         print(f"value at queue front -> {self.queue[self.front]}")
-
+    #queue rear
     def q_rear(self):
         if self.isEmpty():
             print("Empty Queue")
@@ -47,7 +44,7 @@ class queue:
     def isEmpty(self):
         return self.size == 0
 
-    def printt(self):
+    def printq(self):
         print(self.queue)
 
 if __name__ == "__main__":
@@ -59,4 +56,4 @@ if __name__ == "__main__":
     # print(f"is the queue full : ->{queue1.isFull()}")
     queue1.printt()
     print(f"Dequeued ->  {queue1.dq()}")
-    queue1.printt()
+    queue1.printq()
