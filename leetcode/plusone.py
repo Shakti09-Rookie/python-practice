@@ -35,16 +35,16 @@ Constraints:
 0 <= digits[i] <= 9
 digits does not contain any leading 0's.
 """
-
-import functools
 from typing import List
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        val1 = functools.reduce(lambda total, d: 10 * total + d, digits, 0)
-        val1+=1
+        val2 = ""
+        for i in digits:
+            val2 += str(i)
+        val3 = 1 + int(val2)
         di = []
-        for x in str(val1):
+        for x in str(val3):
             di.append(x)
         return di
         
