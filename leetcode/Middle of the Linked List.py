@@ -7,24 +7,29 @@
 #         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if not head.next:
+        count = 0
+        c2 = 0
+        temp = head
+        if temp.next is None:
             return head
+        while temp:
+            count+=1
+            temp = temp.next
         
-        mid_node = None
-        total = 0
-        
-        def middle(node, count):
-            
-            if not node:
-                nonlocal total
-                total = count
-                return
-            
-            middle(node.next, count+1)
-            
-            if count == total//2:
-                nonlocal mid_node
-                mid_node = node
-            
-        middle(head, 0)
-        return mid_node
+        temp = head
+        if count%2 == 0:
+            a = count//2
+            while temp:
+                c2+=1
+                if c2 == a:
+                    temp = temp.next
+                    return temp
+                temp = temp.next
+            pass
+        else:
+            a = count//2 + 1
+            while temp:
+                c2+=1
+                if c2 == a:
+                    return temp
+                temp = temp.next
